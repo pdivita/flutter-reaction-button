@@ -9,7 +9,9 @@ class Reaction {
   /// Widget showing as button after selecting preview Icon from box appear.
   final Widget icon;
 
-  Reaction({this.previewIcon, @required this.icon}) {
+  final String tag;
+
+  Reaction({this.previewIcon, @required this.icon, @required this.tag}) {
     assert(icon != null);
     this.previewIcon = previewIcon ?? this.icon;
   }

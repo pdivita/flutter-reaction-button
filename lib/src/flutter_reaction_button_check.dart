@@ -140,8 +140,18 @@ class _FlutterReactionButtonCheckState
 
   void _updateReaction(Reaction reaction, [bool isSelectedFromDialog = false]) {
     _isChecked =
-        isSelectedFromDialog ? true : !reaction.equals(widget.initialReaction);
-    final selectedIndex = widget.reactions.indexOf(reaction);
+    isSelectedFromDialog ? true : !reaction.equals(widget.initialReaction);
+
+    int selectedIndex = -1;
+    String reactionTag = reaction.tag;
+    for(int i = 0; i<widget.reactions.length; i++){
+      if(reactionTag == widget.reactions[i].tag) {
+        selectedIndex = i;
+        break;
+      }
+    }
+
+    //final selectedIndex = widget.reactions.indexOf(reaction);
     widget.onReactionChanged(reaction, selectedIndex, _isChecked);
     setState(() {
       _selectedReaction = reaction;
