@@ -84,7 +84,8 @@ class _FlutterReactionButtonCheckState
         highlightColor: widget.highlightColor,
         splashColor: widget.splashColor,
         onTap: () {
-          _onClickReactionButton();
+          //_onClickReactionButton();
+          _onTapReactionButton(context);
         },
         onLongPress: () {
           _onTapReactionButton(context);
