@@ -34,7 +34,7 @@ class _ReactionsBoxItemState extends State<ReactionsBoxItem>
   void initState() {
     super.initState();
 
-    // Start animation
+    // Start animationc
     _scaleController =
         AnimationController(vsync: this, duration: Duration(milliseconds: 100));
 
@@ -43,6 +43,7 @@ class _ReactionsBoxItemState extends State<ReactionsBoxItem>
       ..addListener(() {
         setState(() {
           _scale = _scaleAnimation.value;
+          print('scale: $_scale');
         });
       });
   }
@@ -59,13 +60,16 @@ class _ReactionsBoxItemState extends State<ReactionsBoxItem>
       scale: _scale,
       child: InkWell(
         onTap: () {
+          //print('ON TAP 3'); // 2
           _scaleController.reverse();
           widget.onReactionClick(widget.reaction);
         },
         onTapDown: (_) {
+          //print('ON TAP DOWN 3'); // 1
           _scaleController.forward();
         },
         onTapCancel: () {
+          //print('ON TAP CANCEL');
           _scaleController.reverse();
         },
         splashColor: widget.splashColor,

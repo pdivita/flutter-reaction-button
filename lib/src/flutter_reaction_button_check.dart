@@ -80,38 +80,40 @@ class _FlutterReactionButtonCheckState
 
   @override
   Widget build(BuildContext context) => InkWell(
-        key: _buttonKey,
-        highlightColor: widget.highlightColor,
-        splashColor: widget.splashColor,
-        onTap: () {
-          //_onClickReactionButton();
-          _onTapReactionButton(context);
-        },
-        onLongPress: () {
-          _onTapReactionButton(context);
-        },
-        child: (_selectedReaction ?? widget.reactions[0]).icon,
-      );
+    key: _buttonKey,
+    highlightColor: widget.highlightColor,
+    splashColor: widget.splashColor,
+    onTap: () {
+      //_onClickReactionButton();
+      _onTapReactionButton(context); // solo quando premo il pollice all'inizio
+    },
+    onLongPress: () {
+      _onTapReactionButton(context);
+    },
+    child: (_selectedReaction ?? widget.reactions[0]).icon,
+  );
 
   void _onTapReactionButton(BuildContext context) {
     _timer = Timer.periodic(Duration(milliseconds: 100), (timer) {
       if (_timer.tick >= _maxTick) {
-        _showReactionButtons(context);
+        _showReactionButtons(context); // solo quando premo il pollice all'inizio
         _timer.cancel();
       }
       return _timer;
     });
   }
 
+  // mai chiamato, a quanto pare
   void _onClickReactionButton() {
     _isChecked = !_isChecked;
-    _updateReaction(
+    updateReaction(
       _isChecked
           ? (widget.selectedReaction ?? widget.reactions[0])
           : widget.initialReaction,
     );
   }
 
+  // solo quando premo il pollice all'inizio
   void _showReactionButtons(BuildContext context) async {
     final buttonOffset = Utils.getButtonOffset(_buttonKey);
     final buttonSize = Utils.getButtonSize(_buttonKey);
@@ -120,25 +122,26 @@ class _FlutterReactionButtonCheckState
         opaque: false,
         transitionDuration: Duration(milliseconds: 200),
         pageBuilder: (context, _, __) => ReactionsBox(
-          buttonOffset: buttonOffset,
-          buttonSize: buttonSize,
-          reactions: widget.reactions,
-          position: widget.boxPosition,
-          color: widget.boxColor,
-          elevation: widget.boxElevation,
-          radius: widget.boxRadius,
-          duration: widget.boxDuration,
-          highlightColor: widget.highlightColor,
-          splashColor: widget.splashColor,
+            buttonOffset: buttonOffset,
+            buttonSize: buttonSize,
+            reactions: widget.reactions,
+            position: widget.boxPosition,
+            color: widget.boxColor,
+            elevation: widget.boxElevation,
+            radius: widget.boxRadius,
+            duration: widget.boxDuration,
+            highlightColor: widget.highlightColor,
+            splashColor: widget.splashColor,
+            onUpdateReaction: updateReaction
         ),
       ),
     );
     if (reactionButton != null) {
-      _updateReaction(reactionButton, true);
+      updateReaction(reactionButton, true);
     }
   }
 
-  void _updateReaction(Reaction reaction, [bool isSelectedFromDialog = false]) {
+  void updateReaction(Reaction reaction, [bool isSelectedFromDialog = false]) {
     _isChecked =
     isSelectedFromDialog ? true : !reaction.equals(widget.initialReaction);
 
