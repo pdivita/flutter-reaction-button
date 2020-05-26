@@ -1,9 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'reactions_position.dart';
-import 'reactions_box.dart';
+
 import 'reaction.dart';
+import 'reactions_box.dart';
+import 'reactions_position.dart';
 import 'utils.dart';
 
 class FlutterReactionButtonCheck extends StatefulWidget {
@@ -80,23 +81,25 @@ class _FlutterReactionButtonCheckState
 
   @override
   Widget build(BuildContext context) => InkWell(
-    key: _buttonKey,
-    highlightColor: widget.highlightColor,
-    splashColor: widget.splashColor,
-    onTap: () {
-      //_onClickReactionButton();
-      _onTapReactionButton(context); // solo quando premo il pollice all'inizio
-    },
-    onLongPress: () {
-      _onTapReactionButton(context);
-    },
-    child: (_selectedReaction ?? widget.reactions[0]).icon,
-  );
+        key: _buttonKey,
+        highlightColor: widget.highlightColor,
+        splashColor: widget.splashColor,
+        onTap: () {
+          //_onClickReactionButton();
+          _onTapReactionButton(
+              context); // solo quando premo il pollice all'inizio
+        },
+        onLongPress: () {
+          _onTapReactionButton(context);
+        },
+        child: (_selectedReaction ?? widget.reactions[0]).icon,
+      );
 
   void _onTapReactionButton(BuildContext context) {
     _timer = Timer.periodic(Duration(milliseconds: 100), (timer) {
       if (_timer.tick >= _maxTick) {
-        _showReactionButtons(context); // solo quando premo il pollice all'inizio
+        _showReactionButtons(
+            context); // solo quando premo il pollice all'inizio
         _timer.cancel();
       }
       return _timer;
@@ -132,23 +135,24 @@ class _FlutterReactionButtonCheckState
             duration: widget.boxDuration,
             highlightColor: widget.highlightColor,
             splashColor: widget.splashColor,
-            onUpdateReaction: updateReaction
-        ),
+            onUpdateReaction: updateReaction),
       ),
     );
+    /*
     if (reactionButton != null) {
       updateReaction(reactionButton, true);
     }
+     */
   }
 
   void updateReaction(Reaction reaction, [bool isSelectedFromDialog = false]) {
     _isChecked =
-    isSelectedFromDialog ? true : !reaction.equals(widget.initialReaction);
+        isSelectedFromDialog ? true : !reaction.equals(widget.initialReaction);
 
     int selectedIndex = -1;
     String reactionTag = reaction.tag;
-    for(int i = 0; i<widget.reactions.length; i++){
-      if(reactionTag == widget.reactions[i].tag) {
+    for (int i = 0; i < widget.reactions.length; i++) {
+      if (reactionTag == widget.reactions[i].tag) {
         selectedIndex = i;
         break;
       }
