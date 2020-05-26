@@ -6,7 +6,7 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80816f66-f6e8-48c4-bd9c-5330c5386b30" name="Default Changelist" comment="Added tag on reaction, fixes _updateReaction that sometimes returns -1">
+    <list default="true" id="80816f66-f6e8-48c4-bd9c-5330c5386b30" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/flutter_reaction_button_check.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/flutter_reaction_button_check.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
@@ -84,7 +84,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590424775924</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Quando si clicca su una reaction, è possibile cliccarci più volte">
+      <created>1590482650359</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1590482650359</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -101,8 +108,11 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Changed onTap on button, with same event of longpress" />
     <MESSAGE value="Added tag on reaction, fixes _updateReaction that sometimes returns -1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added tag on reaction, fixes _updateReaction that sometimes returns -1" />
+    <MESSAGE value="Quando si clicca su una reaction, è possibile cliccarci più volte" />
+    <option name="LAST_COMMIT_MESSAGE" value="Quando si clicca su una reaction, è possibile cliccarci più volte" />
   </component>
 </project>
