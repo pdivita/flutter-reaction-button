@@ -159,12 +159,10 @@ class _FlutterReactionButtonCheckState
     }
 
     //final selectedIndex = widget.reactions.indexOf(reaction);
-    /*
+
     widget.onReactionChanged(reaction, selectedIndex, _isChecked);
     setState(() {
-      _selectedReaction = reaction;
+      // _selectedReaction = reaction;
     });
-
-     */
   }
 }

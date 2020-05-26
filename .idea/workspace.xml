@@ -7,7 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80816f66-f6e8-48c4-bd9c-5330c5386b30" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/flutter_reaction_button_check.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/flutter_reaction_button_check.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
@@ -91,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590482650359</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fix">
+      <created>1590498508510</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1590498508510</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -113,6 +119,7 @@
     <MESSAGE value="Changed onTap on button, with same event of longpress" />
     <MESSAGE value="Added tag on reaction, fixes _updateReaction that sometimes returns -1" />
     <MESSAGE value="Quando si clicca su una reaction, è possibile cliccarci più volte" />
-    <option name="LAST_COMMIT_MESSAGE" value="Quando si clicca su una reaction, è possibile cliccarci più volte" />
+    <MESSAGE value="Fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix" />
   </component>
 </project>
