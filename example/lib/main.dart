@@ -29,7 +29,7 @@ class _MyAppState extends State<MyApp> {
               initialReaction: Example.flagsReactions[0],
               boxColor: Colors.black.withOpacity(0.5),
               boxRadius: 10,
-              boxDuration: Duration(milliseconds: 500),
+              boxDuration: Duration(milliseconds: 1),
             ),
             SizedBox(width: 10),
           ],

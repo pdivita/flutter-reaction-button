@@ -43,7 +43,7 @@ class FlutterReactionButton extends StatefulWidget {
     this.boxColor = Colors.white,
     this.boxElevation = 5,
     this.boxRadius = 50,
-    this.boxDuration = const Duration(milliseconds: 200),
+    this.boxDuration = const Duration(milliseconds: 1),
   })  : assert(reactions != null),
         super(key: key);
 

@@ -36,7 +36,7 @@ class _ReactionsBoxItemState extends State<ReactionsBoxItem>
 
     // Start animationc
     _scaleController =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 100));
+        AnimationController(vsync: this, duration: Duration(milliseconds: 1));
 
     final Tween<double> startTween = Tween(begin: 1, end: 1.3);
     _scaleAnimation = startTween.animate(_scaleController)

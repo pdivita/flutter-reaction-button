@@ -50,7 +50,7 @@ class FlutterReactionButtonCheck extends StatefulWidget {
     this.boxColor = Colors.white,
     this.boxElevation = 5,
     this.boxRadius = 50,
-    this.boxDuration = const Duration(milliseconds: 200),
+    this.boxDuration = const Duration(milliseconds: 1),
   })  : assert(reactions != null),
         super(key: key);
 
@@ -96,6 +96,9 @@ class _FlutterReactionButtonCheckState
       );
 
   void _onTapReactionButton(BuildContext context) {
+    _showReactionButtons(context);
+
+    /*
     _timer = Timer.periodic(Duration(milliseconds: 100), (timer) {
       if (_timer.tick >= _maxTick) {
         _showReactionButtons(
@@ -104,6 +107,8 @@ class _FlutterReactionButtonCheckState
       }
       return _timer;
     });
+
+     */
   }
 
   // mai chiamato, a quanto pare
@@ -123,7 +128,7 @@ class _FlutterReactionButtonCheckState
     final reactionButton = await Navigator.of(context).push(
       PageRouteBuilder(
         opaque: false,
-        transitionDuration: Duration(milliseconds: 200),
+        transitionDuration: Duration(milliseconds: 1),
         pageBuilder: (context, _, __) => ReactionsBox(
             buttonOffset: buttonOffset,
             buttonSize: buttonSize,
